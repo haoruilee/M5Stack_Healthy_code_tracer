@@ -6,5 +6,8 @@ M5 Core
 ESP32 Camera
 Micropython
 
+# How to use
+You can find some samll and sample code in 'samples'
+
 # Contributers
 
