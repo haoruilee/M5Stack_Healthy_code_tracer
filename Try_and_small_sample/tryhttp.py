@@ -1,3 +1,5 @@
+#This file show a sample http connect to onenet
+
 from m5stack import *
 from m5ui import *
 from uiflow import *
@@ -24,7 +26,7 @@ rect7 = M5Rect(259, 64, 1, 100, 0xFFFFFF, 0xFFFFFF)
 
  
 DEVICE_ID='595818301'
-API_KEY='u6nZShsdI71Bc3ghDnn8Jy0GKZw='
+API_KEY='master-key'#You should change this
  
 SSID="H10"
 PASSWORD="xiaoDA11"
@@ -32,6 +34,7 @@ wlan=None
 s=None
  
 def connectWifi(ssid,passwd):
+ #connect to the wifi
   global wlan
   wlan=network.WLAN(network.STA_IF)
   wlan.active(True)
@@ -42,11 +45,14 @@ def connectWifi(ssid,passwd):
   return True
  
 def http_put_data(data):
+ #post data into onenet
     url='http://api.heclouds.com/devices/'+DEVICE_ID+'/datapoints'
     values={'datastreams':[{"id":"temperature","datapoints":[{"value":data}]}]}
     jdata = json.dumps(values)                 
     r=urequests.post(url,data=jdata,headers={"api-key":API_KEY})
     return r
+
+#If success, it will show a transverse line
 try:
   connectWifi(SSID,PASSWORD)
   rsp = http_put_data(86)
@@ -56,6 +62,7 @@ except:
   wlan.active(False)
   emoji0.show_map([[0,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0]], 0xff0000)
 
+#There is a samlpe code:
 #for count in range(3):
 #  try:
 #    wifiCfg.doConnect('HUAWEI-HQ83GQ', '7312164459')
