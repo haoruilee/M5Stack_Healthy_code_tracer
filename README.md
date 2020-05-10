@@ -2,12 +2,14 @@
 :milky_way: Use M5GO to track healthy code/position/RFID.
 
 # Requirements
-M5 Core
-ESP32 Camera
-Micropython
+- M5GO
+- M5Camera
+- RFID
+- GPS
+- Micropython
 
 # How to use
-You can find some samll and sample code in 'samples'
-
+- You can find some samll and sample code in 'samples'
+- You can run the .py in UIflow-MIcropython
 # Contributers
 [@HibaraAI](https://github.com/DaiyangLuan)
