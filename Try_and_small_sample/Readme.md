@@ -9,7 +9,8 @@
   - 您应该替换WIFI模块的SSID，key，HTTP模块的服务器地址和证书
 - [x] 检测RFID信息并控制POST
   - 您应该检查RFID模组的端口和您的设备是否相同
-- [x] 
+- [x] 使用Remote控制Emoji
+  - 您可以发现emoji是自动刷新的
 
 # Requirements
 所有样例在UIflow 1.2上正确运行
