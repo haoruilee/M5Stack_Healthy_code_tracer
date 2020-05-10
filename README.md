@@ -11,8 +11,6 @@
 # How to use
 - You can find some samll and sample code in 'samples'
 - You can run the .py in UIflow-MIcropython
-
-# How to use
  - 检查WIFI,Key是否匹配您的设备
  - 所有程序在[UIflow 1.4.5](https://flow.m5stack.com/) 上测试通过
  - Remote程序在[在线IDE](https://flow.m5stack.com/)有时不稳定，建议下载至本地
