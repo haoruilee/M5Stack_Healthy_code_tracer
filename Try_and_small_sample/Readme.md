@@ -11,6 +11,7 @@
   - 您应该检查RFID模组的端口和您的设备是否相同
 - [x] 使用Remote控制Emoji
   - 您可以发现emoji是自动刷新的
+  - Remote的原理是MQTT上传数据到M5STACK服务器，所以您应设置好wifi
 
 # Requirements
 所有样例在UIflow 1.2上正确运行
