@@ -1,5 +1,5 @@
 # M5Stack_Healthy_code_tracer
-:milky_way: Use M5GO to track healthy code/position/RFID.
+:milky_way: Use M5GO to track healthy code/position/RFID/temperature by [ONENET](https://open.iot.10086.cn/devdoc/).
 
 # How to use
 - 你可以在Sample文件夹内找到一些小的、样例程序，他们是我开发这个项目的基础:wink:欢迎参考并进行二次开发
@@ -8,6 +8,7 @@
  - 所有.py程序均在[UIflow 1.4.5](https://flow.m5stack.com/) 上测试通过
  - Remote程序在[在线IDE](https://flow.m5stack.com/)有时不稳定，建议下载至本地
  - FINAL.py为M5GO的主控程序
+ - 请参考代码中的注释行进行运行
 ## Requirements
 - (Base:) MIcropython  v1.11+
 - (Core:) M5GO
