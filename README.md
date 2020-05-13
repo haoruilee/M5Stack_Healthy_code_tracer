@@ -3,7 +3,7 @@
 ![ONENET](https://img-blog.csdnimg.cn/20200512224033117.png)
 
 # How to use
-- 你可以在Sample文件夹内找到一些小的、样例程序，他们是我开发这个项目的基础:wink:欢迎参考并进行二次开发
+- 你可以在Try_and_small_samples文件夹内找到一些小的、样例程序，他们是我开发这个项目的基础:wink:欢迎参考并进行二次开发
 - 你可以在maixpy_qr文件夹中找到Unit-V识别二维码并进行串口通信的代码
 - 所有的.py文件均可以在MicroPython1.11上上运行
  - 检查WIFI,Key是否匹配您的设备
