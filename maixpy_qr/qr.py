@@ -8,11 +8,12 @@ import utime
 
 
 #注册引脚
-fm.register(35, fm.fpioa.UART2_TX, force=True)
-fm.register(34, fm.fpioa.UART2_RX, force=True)
-#开启uart
-myuart = UART(1, 115200, 8, None, 1, timeout=10)
+fm.register(16, fm.fpioa.UART2_TX, force=True)
+fm.register(17, fm.fpioa.UART2_RX, force=True)
 
+#初始化uart
+myuart = UART(2, 115200, 8, None, 1, timeout=10,read_buf_len=256)
+myuart.init(baudrate=115200,bits=8,parity=None,stop=1,timeout=10, read_buf_len=256)
 
 clock = time.clock()
 lcd.init()
@@ -31,7 +32,7 @@ while True:
         #img.draw_string(2,2, res[0].payload(), color=(0,128,0), scale=2)
         print((res[0].payload()))#识别二维码
         mystr=(res[0].payload())
-        mystr = mystr.encode('base64','strict')
+        mystr = mystr.encode('UTF-8','ignore')
         #uart传输
         myuart.write(mystr)
         print('OKKKK')
