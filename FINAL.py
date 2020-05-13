@@ -19,13 +19,14 @@
   import json
   from emoji import Emoji
   import wifiCfg
+  from machine import UART,Pin
 
   #初始化
   setScreenColor(0x222222)
   gps0 = unit.get(unit.GPS, unit.PORTC)
   rfid0 = unit.get(unit.RFID, unit.PORTA)
   env0 = unit.get(unit.ENV, unit.PORTA)
-
+  uart = UART(1, baudrate=115200,rx=16,tx=17,timeout=10)
 
   #UI界面
   emoji0 = Emoji(7, 7, 15, 9)
@@ -110,6 +111,23 @@
       headers={"api-key":API_KEY})
       return r
 
+    def http_put_qr(data):
+      '''
+      传输识别到的二维码至ONENET平台的cus_QR数据流
+      data:QR Code info
+      url：http的post地址
+      values:请参考https://open.iot.10086.cn/doc/multiprotocol/  文档中的"HTTP协议上传数据点模块，配置json格式信息"
+      API_KEY:设备发送HTTP请求的证书，请参考https://open.iot.10086.cn/doc/multiprotocol/book/develop/http/api/api-usage.html  文档中的"鉴权说明"
+      '''
+      url='http://api.heclouds.com/devices/595818301/datapoints'
+      values={'datastreams':[{"id":"cus_QR","datapoints":[{"value":data}]}]}
+      jdata = json.dumps(values)                 
+      r=urequests.post(url,
+      data=jdata,
+      headers={"api-key":API_KEY})
+      return r
+    
+    
   #Wifi连接并以emoji展示连接状态
   #wifi not connected
   emoji0.show_map([[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,1,0,0,0,1,0],[1,0,1,1,1,0,1],[0,1,0,0,0,1,0],[0,0,0,1,0,0,0],[0,0,0,1,0,0,0]], 0xff0000)
@@ -146,6 +164,17 @@
       #完成后指示灯变绿
       rgb.setColorAll(0x33ff33)
       rgb.setBrightness(10)
+      #等待乘客拿出手机扫码
+      wait(5)
+    #等待时间结束，RGB变色
+    rgb.setColorAll(0x0DF6F6)
+    if uart.any():
+        rgb.setColorAll(0xFFFF)
+        #接受串口数据
+        b_data = uart.read()
+        dat = '{}'.format(b_data.decode('UTF-8','ignore'))
+        rsp_qr=http_put_qr(dat)
+        emoji0.show_map([[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,1],[0,0,0,0,0,1,1],[1,0,0,0,1,1,0],[0,1,1,1,1,0,0],[0,0,1,1,0,0,0]], 0x000000)
     else:
       #可选是否断开wifi
       #wlan.disconnect()
