@@ -4,12 +4,17 @@
 
 # How to use
 - 你可以在Sample文件夹内找到一些小的、样例程序，他们是我开发这个项目的基础:wink:欢迎参考并进行二次开发
+- 你可以在maixpy_qr文件夹中找到Unit-V识别二维码并进行串口通信的代码
 - 所有的.py文件均可以在MicroPython1.11上上运行
  - 检查WIFI,Key是否匹配您的设备
  - 所有.py程序均在[UIflow 1.4.5](https://flow.m5stack.com/) 上测试通过
  - Remote程序在[在线IDE](https://flow.m5stack.com/)有时不稳定，建议下载至本地
  - FINAL.py为M5GO的主控程序
  - 请参考代码中的注释行进行运行
+
+## Documents
+ [CSDN教学文档](https://blog.csdn.net/weixin_46233323/article/details/106054434)
+ 万字长文:yum:目前已被推荐首页
 ## Requirements
 - (Base:) MIcropython  v1.11+
 - (Core:) M5GO
