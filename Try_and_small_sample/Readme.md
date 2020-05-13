@@ -1,6 +1,6 @@
 # Samples
 
-本文件夹提供了很多小的micropython开发M5Stack的样例。
+本文件夹提供了小的micropython开发M5Stack的样例。
 
 **由于官方样例缺少HTTP方面的例子，本Sample主要在于HTTP模块上进行发展**
 
