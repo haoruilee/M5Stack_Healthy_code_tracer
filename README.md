@@ -7,7 +7,7 @@
 - 你可以在maixpy_qr文件夹中找到Unit-V识别二维码并进行串口通信的代码
 - 所有的.py文件均可以在MicroPython1.11上上运行
  - 检查WIFI,Key是否匹配您的设备
- - 所有.py程序均在[UIflow 1.4.5](https://flow.m5stack.com/) 上测试通过
+ - 主控FINAL.py程序均在[UIflow 1.4.5](https://flow.m5stack.com/) 上测试通过
  - Remote程序在[在线IDE](https://flow.m5stack.com/)有时不稳定，建议下载至本地
  - FINAL.py为M5GO的主控程序
  - 请参考代码中的注释行进行运行
