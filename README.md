@@ -14,7 +14,7 @@
 
 ## Documents
  [CSDN教学文档](https://blog.csdn.net/weixin_46233323/article/details/106054434)
- 万字长文:yum:目前已被推荐首页
+ 万字长文:yum:
 ## Requirements
 - (Base:) MIcropython  v1.11+
 - (Core:) M5GO
