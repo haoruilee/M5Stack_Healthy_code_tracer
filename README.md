@@ -19,6 +19,7 @@
 - (Base:) MIcropython  v1.11+
 - (Core:) M5GO
 - (Unit:) GPS、RFID、ENV、M5Camera
+- (IDE:) Maixpy Ardunio
 
 你可以在[UIFLOW Tutorial](https://docs.m5stack.com/#/en/uiflow/uiflow_home_page)下载M5Burner进行固件烧录。
 
