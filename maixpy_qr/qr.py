@@ -12,7 +12,7 @@ fm.register(16, fm.fpioa.UART2_TX, force=True)
 fm.register(17, fm.fpioa.UART2_RX, force=True)
 
 #初始化uart
-myuart = UART(2, 115200, 8, None, 1, timeout=10,read_buf_len=256)
+myuart = UART(1, 115200, 8, None, 1, timeout=10,read_buf_len=256)
 myuart.init(baudrate=115200,bits=8,parity=None,stop=1,timeout=10, read_buf_len=256)
 
 clock = time.clock()
