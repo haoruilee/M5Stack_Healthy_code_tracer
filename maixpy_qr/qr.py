@@ -28,11 +28,9 @@ while True:
     res = img.find_qrcodes()#识别二维码
     fps =clock.fps()
     if len(res) > 0:
-        #print((res[0].payload()))
         mystr=str(res[0].payload())
-        #mystr = mystr.encode('UTF-8','ignore')
         #uart传输
-        uart_Port.write(mystr)
+        uart_Port.write(str(mystr))
         print(mystr)
         time.sleep(3)
     lcd.display(img)#显示图像
