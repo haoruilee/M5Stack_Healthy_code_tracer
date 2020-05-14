@@ -16,7 +16,7 @@ myuart = UART(1, 115200, 8, None, 1, timeout=10,read_buf_len=256)
 myuart.init(baudrate=115200,bits=8,parity=None,stop=1,timeout=10, read_buf_len=256)
 
 clock = time.clock()
-lcd.init()
+lcd.init()#lcd显示
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA)
@@ -25,17 +25,15 @@ sensor.run(1)
 sensor.skip_frames(30)
 while True:
     clock.tick()
-    img = sensor.snapshot()
-    res = img.find_qrcodes()
+    img = sensor.snapshot()#获得图像
+    res = img.find_qrcodes()#识别二维码
     fps =clock.fps()
     if len(res) > 0:
-        #img.draw_string(2,2, res[0].payload(), color=(0,128,0), scale=2)
-        print((res[0].payload()))#识别二维码
+        print((res[0].payload()))
         mystr=(res[0].payload())
         mystr = mystr.encode('UTF-8','ignore')
         #uart传输
         myuart.write(mystr)
-        print('OKKKK')
         print(mystr)
         time.sleep(2)
-    lcd.display(img)
+    lcd.display(img)#显示图像
