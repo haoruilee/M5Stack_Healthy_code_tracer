@@ -7,13 +7,12 @@ from machine import UART
 import utime
 
 
-#注册引脚
-fm.register(16, fm.fpioa.UART2_TX, force=True)
-fm.register(17, fm.fpioa.UART2_RX, force=True)
-
 #初始化uart
-myuart = UART(1, 115200, 8, None, 1, timeout=10,read_buf_len=256)
-myuart.init(baudrate=115200,bits=8,parity=None,stop=1,timeout=10, read_buf_len=256)
+#注册引脚
+fm.register(35, fm.fpioa.UART2_RX, force=True)
+fm.register(34, fm.fpioa.UART2_TX, force=True)
+#初始化uart
+uart_Port = UART(UART.UART2, 115200,8,0,0, timeout=1000, read_buf_len= 1024)
 
 clock = time.clock()
 lcd.init()#lcd显示
@@ -29,11 +28,11 @@ while True:
     res = img.find_qrcodes()#识别二维码
     fps =clock.fps()
     if len(res) > 0:
-        print((res[0].payload()))
-        mystr=(res[0].payload())
-        mystr = mystr.encode('UTF-8','ignore')
+        #print((res[0].payload()))
+        mystr=str(res[0].payload())
+        #mystr = mystr.encode('UTF-8','ignore')
         #uart传输
-        myuart.write(mystr)
+        uart_Port.write(mystr)
         print(mystr)
         time.sleep(2)
     lcd.display(img)#显示图像
