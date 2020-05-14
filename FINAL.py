@@ -26,7 +26,11 @@
   gps0 = unit.get(unit.GPS, unit.PORTC)
   rfid0 = unit.get(unit.RFID, unit.PORTA)
   env0 = unit.get(unit.ENV, unit.PORTA)
-  uart = UART(1, baudrate=115200,rx=16,tx=17,timeout=10)
+  #设置uart
+  uart = None
+  uart_data=None
+  uart = UART(2, tx=17, rx=16) 
+  uart.init(115200, bits=8, parity=None, stop=1)
 
   #UI界面
   emoji0 = Emoji(7, 7, 15, 9)
@@ -184,9 +188,8 @@
     if uart.any():
         rgb.setColorAll(0xFFFF)
         #接受串口数据
-        b_data = uart.read()
-        dat = '{}'.format(b_data.decode('UTF-8','ignore'))
-        rsp_qr=http_put_qr(dat)
+        uart_data = str((uart.read()).decode())
+        rsp_qr=http_put_qr(uart_data)
         emoji0.show_map([[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,1],[0,0,0,0,0,1,1],[1,0,0,0,1,1,0],[0,1,1,1,1,0,0],[0,0,1,1,0,0,0]], 0x000000)
     else:
       #可选是否断开wifi
