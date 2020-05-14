@@ -23,7 +23,7 @@
 
   #初始化
   setScreenColor(0x222222)
-  gps0 = unit.get(unit.GPS, unit.PORTC)
+  gps0 = unit.get(unit.GPS, unit.PORTB)
   rfid0 = unit.get(unit.RFID, unit.PORTA)
   env0 = unit.get(unit.ENV, unit.PORTA)
   #设置uart
