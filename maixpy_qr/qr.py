@@ -34,5 +34,5 @@ while True:
         #uart传输
         uart_Port.write(mystr)
         print(mystr)
-        time.sleep(2)
+        time.sleep(3)
     lcd.display(img)#显示图像
