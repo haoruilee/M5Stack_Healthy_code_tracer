@@ -12,6 +12,9 @@
  - FINAL.py为M5GO的主控程序
  - 请参考代码中的注释行进行运行
 
+## Structure
+![假设](https://img-blog.csdnimg.cn/20200515213214713.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjIzMzMyMw==,size_16,color_FFFFFF,t_70)
+
 ## Documents
  [CSDN教学文档](https://blog.csdn.net/weixin_46233323/article/details/106054434)
  万字长文:yum:保教包会
