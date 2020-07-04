@@ -2,6 +2,8 @@
 :milky_way: Use M5GO to track healthy code/position/RFID/temperature by [ONENET](https://open.iot.10086.cn/devdoc/).
 ![ONENET](https://img-blog.csdnimg.cn/20200512224033117.png)
 
+English version README : [README](https://github.com/haoruilee/M5Stack_Healthy_code_tracer/blob/master/README_EN.md) 
+
 # How to use
 - 你可以在Try_and_small_samples文件夹内找到一些小的、样例程序，他们是我开发这个项目的基础:wink:欢迎参考并进行二次开发
 - 你可以在maixpy_qr文件夹中找到Unit-V识别二维码并进行串口通信的代码
