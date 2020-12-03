@@ -2,6 +2,9 @@
 [![Blog Badge](https://img.shields.io/badge/blog-25k%20pageview-brightgreen)](https://blog.csdn.net/weixin_46233323)
  [![github](https://img.shields.io/github/stars/haoruilee/M5Stack_Healthy_code_tracer.svg)](https://github.com/haoruilee/M5Stack_Healthy_code_tracer) 
  
+ 
+ ![M5Stack_Healthy_code_tracer](https://socialify.git.ci/haoruilee/M5Stack_Healthy_code_tracer/image?language=1&owner=1&stargazers=1&theme=Light)
+ 
 :milky_way: Use M5GO to track healthy code/position/RFID/temperature by [ONENET](https://open.iot.10086.cn/devdoc/).
 ![ONENET](https://img-blog.csdnimg.cn/20200512224033117.png)
 
